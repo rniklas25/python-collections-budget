@@ -7,4 +7,3 @@ spending_categories = []
 for expense in expenses.list:
     spending_categories.append(expense.category)
 
-
