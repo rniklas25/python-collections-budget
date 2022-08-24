@@ -1,5 +1,6 @@
 from . import Expense
 import collections
+import matplotlib.pyplot as plt
 
 
 expenses = Expense.Expenses()
@@ -12,3 +13,13 @@ for expense in expenses.list:
 # Use collection Counter to count how many purchases were in each category
 spending_counter = collections.Counter(spending_categories)
 print(spending_counter)
+top5 = spending_counter.most_common(5)
+#print(top5)
+
+# zip puts 2 lists into a dict, *zip does the reverse
+categories, count = zip(*top5)
+
+fig, ax = plt.subplots()
+ax.bar(categories, count)
+ax.set_title('# of Purchases by Category')
+plt.show()
