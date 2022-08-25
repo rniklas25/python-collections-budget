@@ -32,6 +32,7 @@ class BudgetList:
         except StopIteration as stop:
             return self.iter_o.__next__()
 
+
 def main():
     myBudgetList = BudgetList(1200)
     expenses = Expense.Expenses()
@@ -40,6 +41,9 @@ def main():
         myBudgetList.append(expense.amount)
 
     print('The count of all expenses: ' + str(len(myBudgetList)))
+    for entry in myBudgetList:
+        print(entry)
+
 
 if __name__ == "__main__":
     main()
